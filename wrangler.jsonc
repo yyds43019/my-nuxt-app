@@ -2,10 +2,17 @@
   "name": "my-nuxt-app",
   "compatibility_date": "2025-08-01",
   "pages_build_output_dir": "./dist",
-  "kv_namespaces":[
+  "kv_namespaces": [
     {
       "binding": "TEST_KV",
       "id": "ff456e5c981b416780ea25e205ef7203"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "test_d1",
+      "database_id": "8857c5a4-f43f-4cb6-8110-686f04dd4372"
     }
   ]
 }
