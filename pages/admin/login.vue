@@ -33,7 +33,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
       description: "登录成功",
       color: "info",
     });
-    location.href = "/";
+    location.href = "/admin";
   } else {
     toast.add({
       title: "Fail",
