@@ -12,6 +12,7 @@
   "dependencies": {
     "@cloudflare/workers-types": "^4.20250822.0",
     "@nuxt/ui": "^3.3.0",
+    "drizzle-orm": "^0.44.4",
     "nuxt": "^3.17.7",
     "nuxt-auth-utils": "^0.5.23",
     "vue": "^3.5.18",
@@ -19,6 +20,7 @@
     "zod": "^4.0.17"
   },
   "devDependencies": {
+    "drizzle-kit": "^0.31.4",
     "tailwindcss": "^4.1.12"
   }
 }

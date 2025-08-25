@@ -1,7 +1,8 @@
-import { type PersonRow } from "~/types/person";
+import { drizzle } from "drizzle-orm/d1";
+import { person } from '~/schema/schema'
 
 export default defineEventHandler(async (event) => {
-    const db = event.context.cloudflare.env.DB
-    const result = await db.prepare("select * from person").run<PersonRow>();
-    return Response.json(result.results)
+    const db = drizzle(event.context.cloudflare.env.DB)
+    const allPerson = await db.select().from(person).all();
+    return Response.json(allPerson)
 })

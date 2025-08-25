@@ -13,8 +13,8 @@ const { data, refresh } = useFetch<PersonRow[]>("/api/admin/person");
 
 const columns: TableColumn<PersonRow>[] = [
   { accessorKey: 'id', header: '#', cell: ({ row }) => `#${row.getValue('id')}` },
-  { accessorKey: 'name', header: 'name', cell: ({ row }) => `#${row.getValue('name')}` },
-  { accessorKey: 'age', header: 'age', cell: ({ row }) => `#${row.getValue('age')}` }
+  { accessorKey: 'name', header: 'name', cell: ({ row }) => `${row.getValue('name')}` },
+  { accessorKey: 'age', header: 'age', cell: ({ row }) => `${row.getValue('age')}` }
 ]
 
 const state = reactive({

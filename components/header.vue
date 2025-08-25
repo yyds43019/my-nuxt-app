@@ -9,6 +9,10 @@ const items = [
     label: "Test",
     to: "/test",
   },
+  {
+    label: "Admin",
+    to: "/admin",
+  },
 ] satisfies NavigationMenuItem[];
 </script>
 

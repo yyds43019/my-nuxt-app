@@ -1,9 +1,11 @@
-import { type PersonRow } from "~/types/person";
+import { drizzle } from "drizzle-orm/d1";
+import { person } from '~/schema/schema'
 
 export default defineEventHandler(async (event) => {
-    const body = await readBody<PersonRow>(event);
+    const body = await readBody<{ name: string, age: number }>(event);
 
-    const db = event.context.cloudflare.env.DB
-    const result = await db.prepare("insert into person (name,age) values(?,?)").bind(body.name, body.age).run();
-    return Response.json(result.success)
+    const db = drizzle(event.context.cloudflare.env.DB)
+
+    const result = await db.insert(person).values({ name: body.name, age: body.age }).returning({ insertedId: person.id })
+    return Response.json(result)
 })
