@@ -35,9 +35,7 @@ async function submit(event: FormSubmitEvent<any>) {
   <div v-if="loggedIn">
     <div>signed username: {{ user?.name }}</div>
   </div>
-  <div v-if="data">
-    <UTable :data="data" :columns="columns"></UTable>
-  </div>
+  <UTable :data="data ?? undefined" :columns="columns" :loading="!data"></UTable>
   <div>
     <UForm :state="state" @submit="submit">
       <UFormField label="name" name="name">

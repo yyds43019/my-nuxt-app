@@ -24,6 +24,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
       description: "用户名或密码错误",
       color: "info",
     });
+    return
   }
   var data = (await res.json()) as { code: number; error: string };
   console.log(data);
