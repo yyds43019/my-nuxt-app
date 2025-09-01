@@ -1,5 +1,5 @@
 import { drizzle } from "drizzle-orm/d1";
-import { person } from '~/schema/schema'
+import { person } from '~~/server/schema/schema'
 
 export default defineEventHandler(async (event) => {
     const db = drizzle(event.context.cloudflare.env.DB)
