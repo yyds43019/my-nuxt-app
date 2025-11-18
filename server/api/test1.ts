@@ -1,3 +1,5 @@
-export default defineEventHandler((event)=>{
-    return new Response("test1")
+export default defineEventHandler((event) => {
+    return Response.json({
+        headersJson: event.node.req.headers,
+    })
 })
